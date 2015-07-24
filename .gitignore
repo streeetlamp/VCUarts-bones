@@ -70,3 +70,4 @@ temp/
 *.scssc
 library/css/*
 build/
+library/js/dist/*.js
