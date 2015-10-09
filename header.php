@@ -31,6 +31,8 @@ __   _____ _   _          _
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
+    <?php // COMPATIBILITY ?>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
