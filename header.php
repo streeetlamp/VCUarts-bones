@@ -26,8 +26,6 @@ __   _____ _   _          _
       <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <![endif]-->
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
