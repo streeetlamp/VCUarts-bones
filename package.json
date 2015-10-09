@@ -1,9 +1,9 @@
 {
-  "name": "grunt-for-bones",
+  "name": "grunt-for-vcuarts",
   "version": "0.1.1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/luetkemj/grunt-for-bones.git"
+    "url": "https://github.com/VCUarts/VCUarts-bones.git"
   },
   "devDependencies": {
     "grunt": "latest",
