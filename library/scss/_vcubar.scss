@@ -2,7 +2,6 @@
 VCU BAR
 *********************/
 
-
 .vcubar{
   background: $white;
   border-top: 3px solid $f-gray;
@@ -46,36 +45,6 @@ VCU BAR
     height: 2em;
     position: relative;
     overflow: hidden;
-  }
-}
-
-a.vcu-fallback {
-  display: none;
-}
-.no-svg a.vcu-fallback {
-  display: block;
-  background: url('../images/svg/fallbacks/logo-vcu-dk.png');
-  width: 346px;
-  height: 17px;
-  max-width: 60px;
-  @include breakpoint($breakpoint-481, $no-query: '.no-mediaqueries'){
-    max-width: 346px;
-  }
-  &:hover {
-    background: url('../images/svg/fallbacks/logo-vcu-color.png');
-  }
-}
-a.vcuarts-fallback {
-  display: none;
-}
-.no-svg a.vcuarts-fallback {
-  display: block;
-  background: url('../images/svg/fallbacks/logo-vcuarts.png');
-  width: 84px;
-  height: 19px;
-  right: 2%;
-  &:hover {
-    background: url('../images/svg/fallbacks/logo-vcuarts-color.png');
   }
 }
 
