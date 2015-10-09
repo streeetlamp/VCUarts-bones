@@ -15,10 +15,8 @@ __   _____ _   _          _
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php wp_title(''); ?></title>
 
-		<?php // mobile meta (hooray!) ?>
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<?php // responsive ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
