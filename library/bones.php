@@ -121,6 +121,9 @@ function bones_scripts_and_styles() {
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/dist/main.js', array( 'jquery' ), '', true );
     wp_register_script( 'bones-js-min', get_stylesheet_directory_uri() . '/library/js/dist/main.min.js', array( 'jquery' ), '', true );
+
+    //font awesome
+    wp_register_style( 'bones-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '' );
 		
     // check environment before outputting appropriate stylesheet
     if ( we_are_live() ){
@@ -130,6 +133,7 @@ function bones_scripts_and_styles() {
     }
 
 		wp_enqueue_style( 'bones-ie-only' );
+    wp_enqueue_style( 'bones-font-awesome' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
