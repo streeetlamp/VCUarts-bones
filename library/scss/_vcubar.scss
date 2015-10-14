@@ -57,7 +57,7 @@ VCU BAR
 }
 .vcu-name {
   display: none;
-  @include breakpoint($breakpoint-481, $no-query: '.no-mediaqueries'){
+  @include breakpoint($min-width-481, $no-query: '.no-mediaqueries'){
     display: block;
   }
 }
