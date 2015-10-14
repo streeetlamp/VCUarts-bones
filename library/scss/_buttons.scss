@@ -18,11 +18,11 @@ BUTTONS
 //extending the button
 .blue-btn {
   @extend %btn;
-  background-color: $blue;
+  background-color: blue;
 
   &:hover,
   &:focus {
-    background-color: darken($blue, 4%);
+    background-color: darken(blue, 4%);
   } 
 
 }

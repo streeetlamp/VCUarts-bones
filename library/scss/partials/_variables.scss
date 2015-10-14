@@ -2,41 +2,10 @@
 VARIABLES
 *********************/
 
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
-
-$black:             #323944;
+$black:             #000;
 $white:             #fff;
+$gray:              #555;
+$light-gray:        #ccc;
 
-$light-gray:        #f8f9fa;
-$gray:              #eaedf2;
-$text-color:        #5c6b80;
-$meta-gray:         #9fa6b4;
-
-$tan:               #eceee5;
-
-$green:             #7dd667;
-
-$bones-pink:        #f01d4f;
-$blue:              #2980b9;
-
-
-$f-gray:            #474D4D;
-$f-red:             #e96763;
-$f-blue:            #d6e1df;
-
-
-$link-color:        $f-red;
+$link-color:        blue;
 $link-hover:        darken($link-color, 9%);
-
-$border-color:      #ccc;
-$disabled-gray:     #cfcfcf;
-
-
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
