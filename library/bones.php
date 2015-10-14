@@ -271,4 +271,9 @@ function bones_excerpt_more($more) {
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
+// Hide ACF from admin menu if live
+if ( we_are_live() ){
+  add_filter('acf/settings/show_admin', '__return_false');
+}
+
 ?>
