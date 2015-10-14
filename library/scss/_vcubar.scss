@@ -4,8 +4,8 @@ VCU BAR
 
 .vcubar{
   background: $white;
-  border-top: 3px solid $f-gray;
-  border-bottom: 3px solid $f-gray;
+  border-top: 3px solid $light-gray;
+  border-bottom: 3px solid $light-gray;
   
   a{
     display: block;
@@ -57,7 +57,7 @@ VCU BAR
 }
 .vcu-name {
   display: none;
-  @include breakpoint($breakpoint-481, $no-query: '.no-mediaqueries'){
+  @include breakpoint($min-width-481, $no-query: '.no-mediaqueries'){
     display: block;
   }
 }
