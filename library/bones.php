@@ -276,4 +276,11 @@ if ( we_are_live() ){
   add_filter('acf/settings/show_admin', '__return_false');
 }
 
+// Customize menu thing is annoying
+add_action( 'wp_before_admin_bar_render', 'bones_before_admin_bar_render' ); 
+function bones_before_admin_bar_render() {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('customize');
+}
+
 ?>
