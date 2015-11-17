@@ -52,7 +52,6 @@ __   _____ _   _          _
         			'link_after' => '',                             // after each link
         			'depth' => 0,                                   // limit the depth of the nav
 						)); ?>
-
 					</nav>
 
 				</div>
