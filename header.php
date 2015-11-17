@@ -15,20 +15,15 @@ __   _____ _   _          _
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php wp_title(''); ?></title>
 
-		<?php // responsive ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
     <!--[if IE]>
       <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <![endif]-->
 
-		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
-		<?php // end of wordpress head ?>
 
-    <?php // COMPATIBILITY ?>
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
 
