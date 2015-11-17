@@ -10,6 +10,9 @@ require_once( 'library/bones.php' );
 // Google Analytics
 require_once( 'library/inc/google-analytics.php' );
 
+// Disables trackbacks/pingbacks
+require_once( 'library/inc/disable-trackbacks.php' );
+
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
