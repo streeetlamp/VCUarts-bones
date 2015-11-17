@@ -4,6 +4,7 @@ Theme URI: http://arts.vcu.edu
 Description: VCUarts Starter Theme
 Author: VCUarts
 Author URI: http://arts.vcu.edu
+Tags: fluid-layout, responsive-layout, accessibility-ready
 Version: 2.0
 
 GitHub Theme URI: https://replace.me
@@ -16,3 +17,6 @@ License URI: http://sam.zoy.org/wtfpl/
 .sticky {}          /* DO NOT EDIT THIS */
 .gallery-caption {} /* THESE ARE USELESS */
 .bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
+.wp-caption {}
+.wp-caption-text {}
+.screen-reader-text {} 
