@@ -29,6 +29,9 @@ function bones_head_cleanup() {
 	add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
 	// remove Wp version from scripts
 	add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+  // emoji's actually suck
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
 } /* end bones head cleanup */
 
 
@@ -201,11 +204,6 @@ function bones_excerpt_more($more) {
 }
 
 
-// emoji's actually suck
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-
 // Hide ACF from admin menu if live
 if ( we_are_live() ){
   add_filter('acf/settings/show_admin', '__return_false');
@@ -218,5 +216,4 @@ function bones_before_admin_bar_render() {
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu('customize');
 }
-
 ?>
