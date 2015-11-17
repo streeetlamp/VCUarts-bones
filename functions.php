@@ -129,4 +129,20 @@ add_filter('wp_footer', 'get_development_scripts', 20);
     'search-form'
 	) );
 
+
+  /*
+  * ACF options page
+  */
+  if( function_exists('acf_add_options_page') ) {
+    
+  acf_add_options_page(array(
+    'page_title'  => 'Site Options',
+    'menu_title'  => 'Site Options',
+    'menu_slug'   => 'options',
+    'capability'  => 'edit_posts',
+    'redirect'    => false
+  ));
+
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
