@@ -68,6 +68,6 @@ temp/
 
 *.codekit
 *.scssc
-library/css/*
+library/css/style.css
 build/
-library/js/dist/*.js
+library/js/dist/main.js
