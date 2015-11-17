@@ -28,7 +28,7 @@ VCU BAR
 
     &.vcuarts{
       width: 84px;
-      right: 2%;
+      right: 0;
       &:hover {
         .arts-dk {
           opacity: 0;
@@ -41,10 +41,10 @@ VCU BAR
   }
 
   .inner-vcubar{
-    @include container();
+    @include container($wrapper-width);
+    @include clearfix;
     height: 2em;
     position: relative;
-    overflow: hidden;
   }
 }
 
@@ -57,7 +57,7 @@ VCU BAR
 }
 .vcu-name {
   display: none;
-  @include breakpoint($min-width-481, $no-query: '.no-mediaqueries'){
+  @include breakpoint($min-width-481) {
     display: block;
   }
 }

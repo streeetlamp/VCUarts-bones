@@ -18,7 +18,3 @@ $min-width-1240: min-width 1240px;
 //mobile & desktop general breakpoints
 $breakpoint-mobile: $max-width-768;
 $breakpoint-desktop: $min-width-768;
-
-//what are these for?
-$breakpoint-no-queries: false;
-$breakpoint-no-query-fallbacks: true;

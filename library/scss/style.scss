@@ -22,12 +22,11 @@ $susy: (
   ),
 );
 
-$wrapper-width: 1600px;
+$wrapper-width: 1320px;
 
 //partials
 @import "partials/normalize";
 @import "partials/variables";
-@import "partials/functions";
 @import "partials/mixins";
 @import "partials/grid";
 

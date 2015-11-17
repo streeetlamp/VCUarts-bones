@@ -7,79 +7,51 @@ NAVIGATION STYLES
   margin: 0;
 
   li {
+    
+    @include breakpoint($breakpoint-desktop){
+      display: inline-block;
+    }
 
     a {
       display: block;
       text-decoration: none;
       padding: 0.75em;
 
-      /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */
-      &:hover, &:focus {
-
-      }
+      &:hover, &:focus {}
     }
 
     &:first-child {}
-
     &:last-child {}
-
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */
     ul.sub-menu,
     ul.children {
-
       li {
-
         a {
           padding-left: 30px;
-
           &:hover,
           &:focus {}
-
           &:link {}
-
         }
-
         &:first-child {}
-
         &:last-child {}
-
       }
-
     }
-
-  } /* end .menu li */
+  } /* end .nav li */
 
   /* highlight current page */
   li.current-menu-item,
   li.current_page_item,
   li.current_page_ancestor {
-
     a {}
-
-  }  /* end current highlighters */
-
+  }
 } /* end .nav */
-
 
 //pagination
 .pagination, .wp-prev-next {
   margin: 1.5em 0;
 }
 
-.pagination{
+.pagination {
   text-align: center;
-
   ul {
     display: inline-block;
     background-color: $white;
@@ -88,7 +60,6 @@ NAVIGATION STYLES
     clear: both;
     border-radius: 3px;
   }
-
   li {
     padding: 0;
     margin: 0;
@@ -97,7 +68,6 @@ NAVIGATION STYLES
     overflow: hidden;
     border-right: 1px solid $gray;
   }
-
   a, span {
     margin: 0;
     text-decoration: none;
@@ -109,35 +79,27 @@ NAVIGATION STYLES
     min-width: 1em;
     display: block;
     color: $link-color;
-
     &:hover, &:focus {
       background-color: $link-color;
       color: $white;
     }
   }
-
-  .current{
+  .current {
     cursor: default;
     color: $black;
-
     &:hover, &:focus {
       background-color: $white;
       color: $black;
     }
   }
-
-} 
+}
 
 .wp-prev-next {
-
   ul {}
-
   .prev-link {
     float: left;
   }
-
   .next-link {
     float: right;
   }
-
 }

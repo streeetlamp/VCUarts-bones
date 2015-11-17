@@ -2,7 +2,7 @@
 BUTTONS
 *********************/
 
-//default button
+//default button you can extend
 %btn {
   display: inline-block;
   position: relative;
@@ -14,15 +14,3 @@ BUTTONS
     text-decoration: none;
   }
 } 
-
-//extending the button
-.blue-btn {
-  @extend %btn;
-  background-color: blue;
-
-  &:hover,
-  &:focus {
-    background-color: darken(blue, 4%);
-  } 
-
-}

@@ -2,33 +2,6 @@
 MIXINS
 *********************/
 
-//transition
-@mixin transition($transition...) {
-  // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
-  @each $prefix in $prefixes {
-    #{$prefix}transition: $transition;
-  }
-}
-
-//css gradients
-@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
-	background-color: $to;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-	background-image: -webkit-linear-gradient(top, $from, $to);
-	background-image: -moz-linear-gradient(top, $from, $to);
-	background-image: -o-linear-gradient(top, $from, $to);
-	background-image: linear-gradient(to bottom, $from, $to);
-}
-
-//box sizing
-@mixin box-sizing($type: border-box) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:    $type;
-	-ms-box-sizing:     $type;
-	box-sizing:         $type;
-}
-
 //clearfix
 @mixin clearfix {
 	zoom: 1;
@@ -36,8 +9,6 @@ MIXINS
 	&:after { clear: both; }
 }
 
-.clearfix { 
+.clearfix, .cf { 
 	@include clearfix; 
 }
-
-

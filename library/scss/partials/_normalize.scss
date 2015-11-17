@@ -22,7 +22,7 @@ main,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 /**
@@ -32,7 +32,7 @@ summary {
 audio,
 canvas,
 video {
-    display: inline-block;
+  display: inline-block;
 }
 
 /**
@@ -41,8 +41,8 @@ video {
  */
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 /**
@@ -52,7 +52,7 @@ audio:not([controls]) {
 
 [hidden],
 template {
-    display: none;
+  display: none;
 }
 
 /* ==========================================================================
@@ -66,9 +66,12 @@ template {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /**
@@ -76,7 +79,7 @@ html {
  */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -88,7 +91,7 @@ body {
  */
 
 a {
-    background: transparent;
+  background: transparent;
 }
 
 /**
@@ -96,7 +99,7 @@ a {
  */
 
 a:focus {
-    outline: thin dotted;
+  outline: 0;
 }
 
 /**
@@ -105,7 +108,7 @@ a:focus {
 
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
 
 /* ==========================================================================
@@ -113,21 +116,11 @@ a:hover {
    ========================================================================== */
 
 /**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
-/**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
 
 abbr[title] {
-    border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 /**
@@ -137,7 +130,7 @@ abbr[title] {
 b,
 strong,
 .strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /**
@@ -147,7 +140,7 @@ strong,
 dfn,
 em,
 .em {
-    font-style: italic;
+  font-style: italic;
 }
 
 /**
@@ -155,28 +148,15 @@ em,
  */
 
 hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
-}
-
-/*
- * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
-*/
-
-p {
-  -webkit-hyphens: auto;
-  -epub-hyphens:   auto;
-  -moz-hyphens:    auto;
-  hyphens:         auto;
-
+  box-sizing: content-box;
+  height: 0;
 }
 
 /*
  * Addresses margins set differently in IE6/7.
  */
 pre {
-    margin: 0;
+  margin: 0;
 }
 
 /**
@@ -187,8 +167,8 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif;
-    font-size: 1em;
+  font-family: monospace, serif;
+  font-size: 1em;
 }
 
 /**
@@ -196,7 +176,7 @@ samp {
  */
 
 pre {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 /**
@@ -204,7 +184,7 @@ pre {
  */
 
 q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /**
@@ -212,12 +192,12 @@ q {
  */
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 small, .small {
-    font-size: 75%;
+  font-size: 75%;
 }
 
 /**
@@ -226,18 +206,18 @@ small, .small {
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-    top: -0.5em;
+  top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 /* ==========================================================================
@@ -252,11 +232,11 @@ dl,
 menu,
 ol,
 ul {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 dd {
-    margin: 0;
+  margin: 0;
 }
 
 /*
@@ -264,13 +244,13 @@ dd {
  */
 
 menu {
-    padding: 0 0 0 40px;
+  padding: 0 0 0 40px;
 }
 
 ol,
 ul {
-    padding: 0;
-    list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 }
 
 /*
@@ -279,8 +259,8 @@ ul {
 
 nav ul,
 nav ol {
-    list-style: none;
-    list-style-image: none;
+  list-style: none;
+  list-style-image: none;
 }
 
 /* ==========================================================================
@@ -292,7 +272,7 @@ nav ol {
  */
 
 img {
-    border: 0;
+  border: 0;
 }
 
 /**
@@ -300,7 +280,7 @@ img {
  */
 
 svg:not(:root) {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -312,7 +292,7 @@ svg:not(:root) {
  */
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -324,9 +304,9 @@ figure {
  */
 
 fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -335,8 +315,10 @@ fieldset {
  */
 
 legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -349,9 +331,12 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
 }
 
 /**
@@ -361,7 +346,7 @@ textarea {
 
 button,
 input {
-    line-height: normal;
+  line-height: normal;
 }
 
 /**
@@ -373,7 +358,7 @@ input {
 
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 
 /**
@@ -385,11 +370,13 @@ select {
  */
 
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
 }
 
 /**
@@ -398,7 +385,7 @@ input[type="submit"] {
 
 button[disabled],
 html input[disabled] {
-    cursor: default;
+  cursor: default;
 }
 
 /**
@@ -408,8 +395,10 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -419,10 +408,8 @@ input[type="radio"] {
  */
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
 }
 
 /**
@@ -432,7 +419,7 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
@@ -441,8 +428,8 @@ input[type="search"]::-webkit-search-decoration {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 /**
@@ -451,8 +438,10 @@ input::-moz-focus-inner {
  */
 
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
 }
 
 /* ==========================================================================
@@ -464,38 +453,19 @@ textarea {
  */
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 
 // BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 .image-replacement,
 .ir {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
-.clearfix, .cf {
-  zoom: 1;
-    &:before, &:after { content: ""; display: table; }
-    &:after { clear: both; }
-}
-
-/*
-use the best ampersand
-http://simplebits.com/notebook/2008/08/14/ampersands-2/
-*/
-span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
