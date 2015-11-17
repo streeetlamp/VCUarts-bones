@@ -1,25 +1,7 @@
 <?php
 /*
-This file handles the admin area and functions.
-You can use this file to make changes to the
-dashboard. Updates to this page are coming soon.
-It's turned off by default, but you can call it
-via the functions file.
-
-Developed by: Eddie Machado
-URL: http://themble.com/bones/
-
-Special Thanks for code & inspiration to:
-@jackmcconnell - http://www.voltronik.co.uk/
-Digging into WP - http://digwp.com/2010/10/customize-wordpress-dashboard/
-
-
-	- removing some default WordPress dashboard widgets
-	- an example custom dashboard widget
-	- adding custom login css
-	- changing text in footer of admin
-
-
+Author: VCUarts
+URL: http://arts.vcu.edu
 */
 
 /************* DASHBOARD WIDGETS *****************/
