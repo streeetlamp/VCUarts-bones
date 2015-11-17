@@ -101,24 +101,26 @@ function we_are_live(){
 
   if ( $current_server == 'arts.vcu.edu' ){
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 /*
 get_development_scripts() tests our environment with we_are_live()
-@returns the appropriate scripts if local
-
-use [grunt sync] to get ports for the last three scripts
+@returns the appropriate scripts if local via wp_footer filter 
 */
 function get_development_scripts() {
 
-  if ( !we_are_live() ){
-    include( 'library/inc/dev-scripts.php' );
+  // abort if live
+  if ( we_are_live() ) {
+    return;
   }
 
+  $dev_script = "<script src='//localhost:35729/livereload.js'></script>";
+  echo $dev_script;
 }
+
+add_filter('wp_footer', 'get_development_scripts', 20);
 
 
 // Enable support for HTML5 markup.
