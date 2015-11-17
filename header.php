@@ -37,7 +37,7 @@ __   _____ _   _          _
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-    <?php get_template_part('library/vcubar' ); ?>
+    <?php get_template_part('library/inc/vcubar' ); ?>
 
 		<div class="container">
 

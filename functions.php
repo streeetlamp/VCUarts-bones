@@ -112,10 +112,10 @@ get_development_scripts() tests our environment with we_are_live()
 
 use [grunt sync] to get ports for the last three scripts
 */
-function get_development_scripts(){
+function get_development_scripts() {
 
   if ( !we_are_live() ){
-    include( 'library/dev-scripts.php' );
+    include( 'library/inc/dev-scripts.php' );
   }
 
 }
