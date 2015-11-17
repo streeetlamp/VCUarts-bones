@@ -7,6 +7,9 @@ URL: http://arts.vcu.edu
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
+// Google Analytics
+require_once( 'library/inc/google-analytics.php' );
+
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
