@@ -29,7 +29,7 @@ __   _____ _   _          _
 
 	<body <?php body_class(); ?>>
 
-    <?php get_template_part('library/inc/vcubar'); ?>
+    <?php get_template_part('library/templates/vcubar'); ?>
 
 		<div class="container">
 
