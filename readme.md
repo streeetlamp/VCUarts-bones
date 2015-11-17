@@ -1,4 +1,4 @@
-*Installation (only required if not using vvvcuarts vagrant)*
+## Getting Started
 ```bash
 npm install
 ```
@@ -7,16 +7,13 @@ npm install
 bower install
 ```
 
-*Usage:*
-
-```bash
-grunt init
-```
-
+## Grunt Tasks  
+*Watching + Live Reloading of JS, CSS, PHP*
 ```bash
 grunt dev
 ```
 
+*Build minified CSS + JS*
 ```bash
 grunt build
 ```
