@@ -1,39 +1,18 @@
 <?php
-/* Welcome to Bones :)
-This is the core Bones file where most of the
-main functions & features reside. If you have
-any custom functions, it's best to put them
-in the functions.php file.
-
-Developed by: Eddie Machado
-URL: http://themble.com/bones/
-
-  - head cleanup (remove rsd, uri links, junk css, ect)
-  - enqueueing scripts & styles
-  - theme support functions
-  - custom menu output & fallbacks
-  - related post function
-  - page-navi function
-  - removing <p> from around images
-  - customizing the post excerpt
-  - custom google+ integration
-  - adding custom fields to user profiles
-
+/*
+Author: VCUarts
+URL: http://arts.vcu.edu
 */
 
 /*********************
 WP_HEAD GOODNESS
-The default wordpress head is
-a mess. Let's clean it up by
-removing all the junk we don't
-need.
 *********************/
 
 function bones_head_cleanup() {
 	// category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links', 2 );
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
@@ -50,8 +29,8 @@ function bones_head_cleanup() {
 	add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
 	// remove Wp version from scripts
 	add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
-
 } /* end bones head cleanup */
+
 
 // A better title
 // http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
@@ -84,6 +63,7 @@ function rw_title( $title, $sep, $seplocation ) {
 
 } // end better title
 
+
 // remove WP version from RSS
 function bones_rss_version() { return ''; }
 
@@ -93,6 +73,7 @@ function bones_remove_wp_ver_css_js( $src ) {
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
+
 
 // remove injected CSS from gallery
 function bones_gallery_style($css) {
@@ -137,12 +118,8 @@ function bones_scripts_and_styles() {
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
-		/*
-		I recommend using a plugin to call jQuery
-		using the google cdn. That way it stays cached
-		and your site will load faster.
-		*/
 		wp_enqueue_script( 'jquery' );
+
     // check environment before outputting appropriate script
 		if ( we_are_live() ){
       wp_enqueue_script( 'bones-js-min' );  
@@ -164,7 +141,7 @@ function bones_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 
 	// default thumb size
-	set_post_thumbnail_size(125, 125, true);
+	set_post_thumbnail_size(600, 600, true);
 
 	// rss thingy
 	add_theme_support('automatic-feed-links');
@@ -175,43 +152,11 @@ function bones_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
+			'main-nav' => __( 'The Main Menu', 'bonestheme' )
 		)
 	);
 } /* end bones theme support */
 
-
-/*********************
-RELATED POSTS FUNCTION
-*********************/
-
-// Related Posts Function (call using bones_related_posts(); )
-function bones_related_posts() {
-	echo '<ul id="bones-related-posts">';
-	global $post;
-	$tags = wp_get_post_tags( $post->ID );
-	if($tags) {
-		foreach( $tags as $tag ) {
-			$tag_arr .= $tag->slug . ',';
-		}
-		$args = array(
-			'tag' => $tag_arr,
-			'numberposts' => 5, /* you can change this to show more */
-			'post__not_in' => array($post->ID)
-		);
-		$related_posts = get_posts( $args );
-		if($related_posts) {
-			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-			<?php endforeach; }
-		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
-		<?php }
-	}
-	wp_reset_postdata();
-	echo '</ul>';
-} /* end bones related posts function */
 
 /*********************
 PAGE NAVI
@@ -238,6 +183,7 @@ function bones_page_navi() {
   echo '</nav>';
 } /* end page navi */
 
+
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/
@@ -254,14 +200,17 @@ function bones_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
 
+
 // emoji's actually suck
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 
 // Hide ACF from admin menu if live
 if ( we_are_live() ){
   add_filter('acf/settings/show_admin', '__return_false');
 }
+
 
 // Customize menu thing is annoying
 add_action( 'wp_before_admin_bar_render', 'bones_before_admin_bar_render' ); 
