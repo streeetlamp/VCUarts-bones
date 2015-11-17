@@ -56,8 +56,7 @@ VCU BAR
   transition: opacity .15s ease-in-out;
 }
 .vcu-name {
-  display: none;
-  @include breakpoint($min-width-481) {
-    display: block;
+  @include breakpoint($bp-small) {
+    display: none;
   }
 }

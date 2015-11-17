@@ -2,19 +2,15 @@
 GRID
 *********************/
 
-//specific breakpoints
-$max-width-481: max-width 481px;
-$min-width-481: min-width 481px;
+// values for breakpoint
+$super-small: 480px;
+$mobile: 768px;
+$desktop: 1020px;
+$super-big: 1320px;
 
-$max-width-768: max-width 768px;
-$min-width-768: min-width 768px;
 
-$max-width-1030: max-width 1030px;
-$min-width-1030: min-width 1030px;
-
-$max-width-1240: max-width 1240px;
-$min-width-1240: min-width 1240px;
-
-//mobile & desktop general breakpoints
-$breakpoint-mobile: $max-width-768;
-$breakpoint-desktop: $min-width-768;
+// variables for breakpoint function
+$bp-small: 0 $super-small;
+$bp-mobile: 0 $mobile;
+$bp-desktop: $mobile + 1;
+$bp-big: $super-big;

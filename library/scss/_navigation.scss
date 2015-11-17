@@ -8,7 +8,7 @@ NAVIGATION STYLES
 
   li {
     
-    @include breakpoint($breakpoint-desktop){
+    @include breakpoint($bp-desktop) {
       display: inline-block;
     }
 
