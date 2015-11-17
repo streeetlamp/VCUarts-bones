@@ -1,35 +1,23 @@
-<?php get_header(); ?>
+<?php get_template_part('library/templates/the-header'); ?>
 
-  <div class="content">
+  <?php if (!have_posts()) :
+    get_template_part('library/templates/not-found');
+  endif; ?>
 
-    <div class="inner-content">
+  <?php while (have_posts()) : the_post(); ?>
 
-      <main class="main">
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <?php if (!have_posts()) :
-          get_template_part('library/templates/not-found');
-        endif; ?>
+      <header class="article-header entry-header">
+        <h1 class="entry-title single-title"><?php the_title(); ?></h1>
+      </header>
 
-        <?php while (have_posts()) : the_post(); ?>
+      <section class="entry-content">
+        <?php the_content(); ?>
+      </section>
 
-          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    </article> <?php // end article ?>
 
-            <header class="article-header entry-header">
-              <h1 class="entry-title single-title"><?php the_title(); ?></h1>
-            </header>
+  <?php endwhile; ?>
 
-            <section class="entry-content">
-              <?php the_content(); ?>
-            </section>
-
-          </article> <?php // end article ?>
-
-        <?php endwhile; ?>
-
-      </main>
-
-    </div>
-
-  </div>
-
-<?php get_footer(); ?>
+<?php get_template_part('library/templates/the-footer'); ?>
