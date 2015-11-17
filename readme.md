@@ -18,7 +18,6 @@ grunt dev
 grunt build
 ```
 
-## Bones
 ![dance](http://i.imgur.com/YuP1ruw.gif)
 
-
+###### shoudouts to [bones](https://github.com/eddiemachado/bones) for the ~inspiration~ 
