@@ -41,4 +41,20 @@ var timeToWaitForLast = 100;
 */
 jQuery(document).ready(function($) {
 
+  var canvas = document.getElementById("canvas"),
+      content = $('html').html();
+      content = content.replace(/<\/?script\b.*?>/g, "");
+
+  var w = $(window).width(),
+      h = $(window).height();
+
+  canvas.width  = w;
+  canvas.height = h;
+
+  rasterizeHTML.drawHTML(content, canvas, {
+    width: w,
+    height: h
+  });
+  $('.hide-everything').fadeIn();
+
 }); /* end of as page load scripts */

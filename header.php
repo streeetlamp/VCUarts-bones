@@ -54,6 +54,12 @@ __   _____ _   _          _
             )); ?>
           </nav>
 
+          <canvas id="canvas">
+            
+          </canvas>
+
+          <div class="hide-everything"></div>
+
         </div>
 
       </header>
