@@ -1,11 +1,11 @@
 /******************************************************************
-Theme Name: VCUarts Starter Theme (Rename Me!)
+Theme Name: VCUarts Bones
 Theme URI: http://arts.vcu.edu
 Description: VCUarts Starter Theme
 Author: VCUarts
 Author URI: http://arts.vcu.edu
 Tags: fluid-layout, responsive-layout, accessibility-ready
-Version: 2.0
+Version: 1.0.00
 
 GitHub Theme URI: https://github.com/VCUarts/VCUarts-bones.git
 GitHub Branch: master
@@ -19,4 +19,4 @@ License URI: http://sam.zoy.org/wtfpl/
 .bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
 .wp-caption {}
 .wp-caption-text {}
-.screen-reader-text {} 
+.screen-reader-text {} /* THANK YOU */
