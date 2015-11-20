@@ -88,19 +88,13 @@ function bones_gallery_style($css) {
 SCRIPTS & ENQUEUEING
 *********************/
 
-// loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
-
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
 
 		// register main stylesheet
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
     wp_register_style( 'bones-stylesheet-min', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all' );
-
-		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/dist/main.js', array( 'jquery' ), '', true );
@@ -116,10 +110,7 @@ function bones_scripts_and_styles() {
       wp_enqueue_style( 'bones-stylesheet' );
     }
 
-		wp_enqueue_style( 'bones-ie-only' );
     wp_enqueue_style( 'bones-font-awesome' );
-
-		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
 		wp_enqueue_script( 'jquery' );
 
