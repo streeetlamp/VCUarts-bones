@@ -1,4 +1,4 @@
-/******************************************************************
+/*
 Theme Name: VCUarts Bones
 Theme URI: http://arts.vcu.edu
 Description: VCUarts Starter Theme
@@ -18,4 +18,7 @@ License URI: http://sam.zoy.org/wtfpl/
 .bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
 .wp-caption {}
 .wp-caption-text {}
-.screen-reader-text {} /* THANK YOU */
+.screen-reader-text {} 
+.alignleft {} 
+.alignright {} 
+.aligncenter {} /* THANK YOU */
