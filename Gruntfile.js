@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
- 
+
     // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Grunt-sass 
+        // Grunt-sass
         sass: {
           app: {
             files: [{
@@ -16,8 +16,8 @@ module.exports = function(grunt) {
             }]
           },
           options: {
-            sourceMap: false, 
-            outputStyle: 'nested', 
+            sourceMap: false,
+            outputStyle: 'nested',
             imagePath: "library/images",
           }
         },
@@ -39,35 +39,35 @@ module.exports = function(grunt) {
                 options: { livereload: true }
             }
         },
- 
+
         autoprefixer: {
             options: {
                 map: false
             },
             dist: {
                 files: {
-                    'library/css/style.css' : 'library/css/style.css'
+                    'library/css/main.css' : 'library/css/main.css'
                 }
             }
         },
- 
+
         cmq: {
             your_target: {
                 files: {
-                    'library/css' : 'library/css/style.css'
+                    'library/css' : 'library/css/main.css'
                 }
             }
         },
- 
+
         cssmin: {
             combine: {
                 files: {
-                    'library/css/style.min.css': 'library/css/style.css',
+                    'library/css/main.min.css': 'library/css/main.css',
                     'library/css/editor-style.min.css': 'library/css/editor-style.css'
                 }
             }
         },
- 
+
         jshint: {
             all: [
                 'library/js/*.js',
@@ -76,8 +76,8 @@ module.exports = function(grunt) {
                 jshintrc: 'library/js/.jshintrc'
             }
         },
- 
-        concat: {  
+
+        concat: {
             footer: {
                 src: [
                     'library/js/libs/*.js', // All JS in the libs folder
@@ -86,12 +86,12 @@ module.exports = function(grunt) {
                 dest: 'library/js/dist/main.js',
             }
         },
- 
+
         uglify: {
             footer: {
                 src: 'library/js/dist/main.js',
                 dest: 'library/js/dist/main.min.js'
-            }, 
+            },
         },
 
         concurrent: {
@@ -101,26 +101,26 @@ module.exports = function(grunt) {
                     logConcurrentOutput: true
                 }
             }
-        } 
+        }
     });
- 
+
     // 3. Where we tell Grunt what plugins to use
- 
+
     // Sass
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
- 
+
     // JS
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
- 
+
     // Browser Reload + File Watch
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
- 
+
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('dev', ['watch']);
     grunt.registerTask('build', ['sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
