@@ -24,7 +24,6 @@ __   _____ _   _          _
 
     <?php wp_head(); ?>
 
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   </head>
 
   <body <?php body_class(); ?>>

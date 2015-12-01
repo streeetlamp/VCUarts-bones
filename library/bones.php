@@ -90,6 +90,8 @@ SCRIPTS & ENQUEUEING
 
 function bones_scripts_and_styles() {
 
+  global $wp_scripts;
+
   if (!is_admin()) {
 
 		// register main stylesheet
@@ -102,14 +104,15 @@ function bones_scripts_and_styles() {
 
     // livereload for development
     wp_register_script( 'bones-livereload', '//localhost:35729/livereload.js', array(), '', true );
-
+    // html5 shiv
+    wp_register_script( 'bones-html5-shiv', '//html5shiv.googlecode.com/svn/trunk/html5.js', array(), '');
     //font awesome
     wp_register_style( 'bones-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '' );
-		
+
     // check environment before outputting appropriate stylesheet
     if ( we_are_live() ){
       wp_enqueue_style( 'bones-stylesheet-min' );
-      wp_enqueue_script( 'bones-js-min' );    
+      wp_enqueue_script( 'bones-js-min' );
     } else {
       wp_enqueue_style( 'bones-stylesheet' );
       wp_enqueue_script( 'bones-js' );
@@ -119,6 +122,9 @@ function bones_scripts_and_styles() {
     wp_enqueue_style( 'bones-font-awesome' );
 		wp_enqueue_script( 'jquery' );
 
+    // add conditional wrapper around html5 shiv
+    $wp_scripts->add_data( 'bones-html5-shiv', 'conditional', 'lt IE 9' );
+    wp_enqueue_script( 'bones-html5-shiv' );
 	}
 }
 
@@ -200,9 +206,8 @@ if ( we_are_live() ){
 
 
 // Customize menu thing is annoying
-add_action( 'wp_before_admin_bar_render', 'bones_before_admin_bar_render' ); 
+add_action( 'wp_before_admin_bar_render', 'bones_before_admin_bar_render' );
 function bones_before_admin_bar_render() {
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu('customize');
 }
-?>
