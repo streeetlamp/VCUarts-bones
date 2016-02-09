@@ -150,6 +150,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    // Building
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-build-control');
+
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('dev', ['watch']);
     grunt.registerTask('build', ['sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
