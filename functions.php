@@ -15,10 +15,6 @@ require_once( 'library/inc/google-analytics.php' );
 // Disables trackbacks/pingbacks
 require_once( 'library/inc/disable-trackbacks.php' );
 
-// CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-/* require_once( 'library/admin.php' ); */
-
-
 /**
  * LAUNCH BONES
  */
@@ -26,10 +22,6 @@ function bones_ahoy() {
 
   /** Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' ); */
-
-
-  // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
   add_action( 'init', 'bones_head_cleanup' );
