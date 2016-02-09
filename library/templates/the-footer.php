@@ -1,10 +1,17 @@
 <?php
-// included after any and all page or post templates  
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
+
 ?>
+
     </main>
 
   </div>
 
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();

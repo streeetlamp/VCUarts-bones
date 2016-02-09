@@ -1,4 +1,12 @@
-<?php // VCU VCUarts Co-Branding Bar ?>
+<?php
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
+
+?>
 
 <div class="vcubar">
   <div class="inner-vcubar">

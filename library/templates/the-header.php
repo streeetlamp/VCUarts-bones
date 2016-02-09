@@ -1,7 +1,12 @@
 <?php
-// included before any and all page or post templates  
-?>
-<?php get_header(); ?>
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
+
+get_header(); ?>
 
 <div class="content">
 

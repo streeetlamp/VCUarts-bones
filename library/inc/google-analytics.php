@@ -1,28 +1,32 @@
 <?php
-/*
-* Google Analytics snippet
-*/
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
 
-function bones_ga_snippet($gaID = null) {
+/**
+ * Create and return the GA snippet if
+ * an ID is set
+ */
+function bones_ga_snippet( $ga_id = null ) {
 
-  $gaID = get_field('ga_code', 'options') ? get_field('ga_code', 'options') : null;
-  if (!$gaID || !we_are_live() || is_user_logged_in()) { return; }
+  $ga_id = get_field( 'ga_code', 'options' ) ? get_field( 'ga_code', 'options' ) : null;
+  if ( ! $ga_id || ! we_are_live() || is_user_logged_in() ) { return; }
 
-  $analytics_code = "
+  echo "
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '".$gaID."', 'auto');
+    ga('create', '". esc_html( $ga_id ) ."', 'auto');
     ga('send', 'pageview');
 
   </script>
   ";
-
-  echo $analytics_code;
 }
 
-add_filter('wp_head', 'bones_ga_snippet', 20);
-?>
+add_filter( 'wp_head', 'bones_ga_snippet', 20 );
