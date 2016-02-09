@@ -1,10 +1,18 @@
-<?php get_template_part('library/templates/the-header'); ?>
+<?php
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
 
-	<?php if (!have_posts()) :
-		get_template_part('library/templates/not-found');
-	endif; ?>
+get_template_part( 'library/templates/the-header' );
 
-	<?php while (have_posts()) : the_post(); ?>
+	if ( ! have_posts() ) :
+		get_template_part( 'library/templates/not-found' );
+	endif;
+
+	while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -22,4 +30,4 @@
 
 	<?php bones_page_navi(); ?>
 
-<?php get_template_part('library/templates/the-footer'); ?>
+<?php get_template_part( 'library/templates/the-footer' );

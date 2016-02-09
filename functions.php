@@ -1,8 +1,10 @@
 <?php
-/*
-Author: VCUarts
-URL: http://arts.vcu.edu
-*/
+/**
+ * Author: VCUarts
+ * URL: http://arts.vcu.edu
+ *
+ * @package VCUarts_Bones_WP
+ */
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
@@ -14,17 +16,16 @@ require_once( 'library/inc/google-analytics.php' );
 require_once( 'library/inc/disable-trackbacks.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-// require_once( 'library/admin.php' );
+/* require_once( 'library/admin.php' ); */
 
 
-/*********************
-LAUNCH BONES
-*********************/
-
+/**
+ * LAUNCH BONES
+ */
 function bones_ahoy() {
 
-  //Allow editor style.
-  // add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
+  /** Allow editor style.
+  add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' ); */
 
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
@@ -63,10 +64,9 @@ if ( ! isset( $content_width ) ) {
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
-// Thumbnail sizes
+/** Thumbnail sizes
 // add_image_size( 'bones-thumb-600', 600, 150, true );
 // add_image_size( 'bones-thumb-300', 300, 100, true );
-
 
 // add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
@@ -76,60 +76,63 @@ if ( ! isset( $content_width ) ) {
 //         'bones-thumb-300' => __('300px by 100px'),
 //     ) );
 // }
+ */
 
 
-/************* THEME CUSTOMIZE *********************/
-function bones_theme_customizer($wp_customize) {
-  $wp_customize->remove_section('colors');
-  $wp_customize->remove_section('background_image');
+/**
+ * THEME CUSTOMIZE
+ */
+function bones_theme_customizer( $wp_customize ) {
+  $wp_customize->remove_section( 'colors' );
+  $wp_customize->remove_section( 'background_image' );
 }
 
 add_action( 'customize_register', 'bones_theme_customizer' );
 
 
-/************* EXTERNAL FONTS *********************/
+/**
+ * EXTERNAL FONTS
+ */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  wp_enqueue_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
 }
 
-add_action('wp_enqueue_scripts', 'bones_fonts');
+add_action( 'wp_enqueue_scripts', 'bones_fonts' );
 
 
-/*
-we_are_live() is a function for testing our environment. 
-@returns true if on production server false if not
-*/
+/**
+ * Testing our environment.
+ *
+ * @returns true if on production server false if not
+ */
+function we_are_live() {
+  $host = home_url();
 
-function we_are_live(){
-  $current_server = $_SERVER['HTTP_HOST']; 
-
-  if ( $current_server == 'arts.vcu.edu' ){
-    return true;
+  if ( preg_match( '/\.dev/', $host ) ) {
+    return false;
   }
-  return false;
+  return true;
 }
 
 
 // Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
     'caption',
-    'search-form'
+    'search-form',
 	) );
 
 
   /*
   * ACF options page
   */
-  if( function_exists('acf_add_options_page') ) {
-    
+  if ( function_exists( 'acf_add_options_page' ) ) {
+
   acf_add_options_page(array(
     'page_title'  => 'Site Options',
     'menu_title'  => 'Site Options',
     'menu_slug'   => 'options',
     'capability'  => 'edit_posts',
-    'redirect'    => false
+    'redirect'    => false,
   ));
 
 }
-
-/* DON'T DELETE THIS CLOSING TAG */ ?>
