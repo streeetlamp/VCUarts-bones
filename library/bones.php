@@ -75,8 +75,8 @@ function rw_title( $title, $sep, $seplocation ) {
 /**
  * Remove WP version from RSS
  */
-function bones_rss_version() { 
-  return ''; 
+function bones_rss_version() {
+  return '';
 }
 
 /**
