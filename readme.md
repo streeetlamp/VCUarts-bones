@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/VCUarts/VCUarts-bones.svg?branch=build)](https://travis-ci.org/VCUarts/VCUarts-bones)
+
 ## Getting Started
 ```bash
 npm install
