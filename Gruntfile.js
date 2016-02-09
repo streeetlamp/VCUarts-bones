@@ -94,6 +94,35 @@ module.exports = function(grunt) {
             },
         },
 
+        copy: {
+            main: {
+                files: [
+                    {expand: true, src: ['**','!build/**','!bower_components/**','!node_modules/**','!.git/**','!library/scss/**','!bower.json','!package.json','!Gruntfile.js','!*.DS_store','.travis.yml'], dest: 'build/'},
+                ],
+            },
+        },
+
+        buildcontrol: {
+          options: {
+            dir: 'build',
+            commit: true,
+            push: true,
+            message: 'Built from commit %sourceCommit% on branch %sourceBranch%'
+          },
+          local: {
+            options: {
+              remote: '../',
+              branch: 'build'
+            }
+          }
+        },
+
+        clean: {
+            build: {
+                src: ['!build/.git/**', 'build/**/*']
+            }
+        },
+
         concurrent: {
             watch: {
                 tasks: ['watch', 'sass'],
@@ -124,4 +153,5 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('dev', ['watch']);
     grunt.registerTask('build', ['sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('deploy', ['build', 'clean', 'copy', 'buildcontrol']);
 };

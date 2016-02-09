@@ -1,6 +1,6 @@
 {
   "name": "grunt-for-vcuarts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/VCUarts/VCUarts-bones.git"
@@ -15,6 +15,9 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-sass": "latest"
+    "grunt-sass": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-build-control": "latest"
   }
 }
