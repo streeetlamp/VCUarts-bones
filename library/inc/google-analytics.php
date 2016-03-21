@@ -22,7 +22,7 @@ function bones_ga_snippet( $ga_id = null ) {
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '". esc_html( $ga_id ) ."', 'auto');
+    ga('create', '" . esc_html( $ga_id ) . "', 'auto');
     ga('send', 'pageview');
 
   </script>
