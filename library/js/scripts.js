@@ -41,4 +41,9 @@ var timeToWaitForLast = 100;
 */
 jQuery(document).ready(function($) {
 
+  // open links in new window plz
+  $("a").each(function () {
+    if (this.hostname != document.location.hostname && this.href != "javascript:void(0)") this.target = "_blank";
+  });
+
 }); /* end of as page load scripts */
