@@ -51,14 +51,6 @@ module.exports = function(grunt) {
             }
         },
 
-        cmq: {
-            your_target: {
-                files: {
-                    'library/css' : 'library/css/main.css'
-                }
-            }
-        },
-
         cssmin: {
             combine: {
                 files: {
@@ -138,7 +130,6 @@ module.exports = function(grunt) {
     // Sass
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // JS
@@ -157,6 +148,6 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('dev', ['watch']);
-    grunt.registerTask('build', ['sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
     grunt.registerTask('deploy', ['build', 'clean', 'copy', 'buildcontrol']);
 };

@@ -1,6 +1,7 @@
 {
   "name": "grunt-for-vcuarts",
-  "version": "0.1.2",
+  "version": "0.1.3",
+  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "https://github.com/VCUarts/VCUarts-bones.git"
@@ -8,7 +9,6 @@
   "devDependencies": {
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
-    "grunt-combine-media-queries": "latest",
     "grunt-concurrent": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
