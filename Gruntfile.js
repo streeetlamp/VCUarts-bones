@@ -54,8 +54,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'library/css/main.min.css': 'library/css/main.css',
-                    'library/css/editor-style.min.css': 'library/css/editor-style.css'
+                    'library/css/main.min.css': 'library/css/main.css'
                 }
             }
         },
