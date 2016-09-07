@@ -16,7 +16,7 @@ require_once( 'library/inc/google-analytics.php' );
 require_once( 'library/inc/disable-trackbacks.php' );
 
 // Minimal Branding Bar Styles
-define( 'VCUARTS_BAR_MIN_STYLES', true );
+// define( 'VCUARTS_BAR_MIN_STYLES', true );
 
 
 /**
