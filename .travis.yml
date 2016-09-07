@@ -14,8 +14,6 @@ language: php
 php:
   # aliased to a recent 5.5.x version
   - "5.5"
-  # aliased to a recent 5.3.x version
-  - "5.3"
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
