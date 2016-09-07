@@ -15,6 +15,10 @@ require_once( 'library/inc/google-analytics.php' );
 // Disables trackbacks/pingbacks
 require_once( 'library/inc/disable-trackbacks.php' );
 
+// Minimal Branding Bar Styles
+define( 'VCUARTS_BAR_MIN_STYLES', true );
+
+
 /**
  * LAUNCH BONES
  */
