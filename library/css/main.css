@@ -546,62 +546,6 @@ NAVIGATION STYLES
   float: right; }
 
 /*********************
-VCU BAR
-*********************/
-.vcubar {
-  background: #fff;
-  border-top: 3px solid #ccc;
-  border-bottom: 3px solid #ccc; }
-  .vcubar a {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 100%;
-    line-height: 40px; }
-    .vcubar a.vcu {
-      width: 346px; }
-      .vcubar a.vcu:hover .vcu-dk {
-        opacity: 0; }
-      .vcubar a.vcu:hover .vcu-color {
-        opacity: 1.0; }
-    .vcubar a.vcuarts {
-      width: 84px;
-      right: 0; }
-      .vcubar a.vcuarts:hover .arts-dk {
-        opacity: 0; }
-      .vcubar a.vcuarts:hover .arts-color {
-        opacity: 1.0; }
-  .vcubar .inner-vcubar {
-    max-width: 1320px;
-    margin-left: auto;
-    margin-right: auto;
-    zoom: 1;
-    height: 2em;
-    position: relative; }
-    .vcubar .inner-vcubar:after {
-      content: " ";
-      display: block;
-      clear: both; }
-    .vcubar .inner-vcubar:before, .vcubar .inner-vcubar:after {
-      content: "";
-      display: table; }
-    .vcubar .inner-vcubar:after {
-      clear: both; }
-
-.vcu-color, .arts-color {
-  opacity: 0;
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
-
-.vcu-dk, .arts-dk {
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
-
-@media (min-width: 0) and (max-width: 480px) {
-  .vcu-name {
-    display: none; } }
-
-/*********************
 FOOTER
 *********************/
 .footer {
