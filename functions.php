@@ -118,6 +118,18 @@ function we_are_live() {
 	) );
 
 
+  if ( ! function_exists( 'the_field' ) ) {
+    add_action( 'admin_notices', 'bones_acf_notice' );
+  }
+
+  function bones_acf_notice() {
+    ?>
+    <div class="update-nag notice" style="display:block; margin:20px 0;">
+      <h3><?php echo( 'Install Advanced Custom Fields Pro please or nothing will work probably!' ); ?></h3>
+    </div>
+    <?php
+  }
+
   /*
   * ACF options page
   */
