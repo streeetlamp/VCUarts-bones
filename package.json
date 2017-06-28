@@ -7,17 +7,20 @@
     "url": "https://github.com/VCUarts/VCUarts-bones.git"
   },
   "devDependencies": {
+    "breakpoint-sass": "latest",
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
+    "grunt-build-control": "latest",
     "grunt-concurrent": "latest",
+    "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-sass": "latest",
-    "grunt-contrib-copy": "latest",
-    "grunt-contrib-clean": "latest",
-    "grunt-build-control": "latest"
-  }
+    "susy": "latest"
+  },
+  "dependencies": {}
 }
