@@ -119,7 +119,7 @@ function bones_scripts_and_styles() {
     // html5 shiv
     wp_register_script( 'bones-html5-shiv', '//html5shiv.googlecode.com/svn/trunk/html5.js', array(), '' );
     // font awesome
-    wp_register_style( 'bones-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '' );
+    wp_register_style( 'bones-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '' );
 
     // check environment before outputting appropriate stylesheet
     if ( we_are_live() ) {
