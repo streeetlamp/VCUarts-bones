@@ -9,6 +9,13 @@ MIXINS
 	&:after { clear: both; }
 }
 
-.clearfix, .cf { 
-	@include clearfix; 
+.clearfix, .cf {
+	@include clearfix;
+}
+
+@mixin container($width: 1400px) {
+	max-width: $width;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }

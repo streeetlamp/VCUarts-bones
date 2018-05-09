@@ -11,7 +11,7 @@ body {
 }
 
 .inner-content, .inner-footer, .inner-header {
-  @include container($wrapper-width);
+  @include container(1200px);
   @include clearfix;
 
   padding: 0 40px;
