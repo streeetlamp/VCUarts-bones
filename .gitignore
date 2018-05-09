@@ -1,12 +1,6 @@
 # folders and files to be ignored by git
 
 ############
-## Bones
-############
-
-Bones.esproj/
-
-############
 ## Bower
 ############
 
@@ -71,3 +65,4 @@ temp/
 library/css/
 build/
 library/js/dist/
+vendor/

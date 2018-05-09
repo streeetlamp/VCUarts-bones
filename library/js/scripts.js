@@ -1,5 +1,5 @@
 /*
- * Author: VCUarts
+ * Author: Cody Whitby
  *
  * javascripting all the things
 */
