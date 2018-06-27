@@ -85,11 +85,11 @@ add_action( 'customize_register', 'bare_theme_customizer' );
 /**
  * EXTERNAL FONTS
  */
-function bare_fonts() {
-  wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
-}
+// function bare_fonts() {
+//   wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+// }
 
-add_action( 'wp_enqueue_scripts', 'bare_fonts' );
+// add_action( 'wp_enqueue_scripts', 'bare_fonts' );
 
 
 /**

@@ -119,7 +119,7 @@ function bare_scripts_and_styles() {
     // html5 shiv
     wp_register_script( 'bare-html5-shiv', '//html5shiv.googlecode.com/svn/trunk/html5.js', array(), '' );
     // font awesome
-    wp_register_style( 'bare-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '' );
+    wp_register_style( 'bare-font-awesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css', array(), '' );
 
     // check environment before outputting appropriate stylesheet
     if ( we_are_live() ) {
