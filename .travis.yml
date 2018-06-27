@@ -13,7 +13,7 @@ language: php
 # Declare versions of PHP to use. Use one decimal max.
 php:
   # aliased to a recent 5.5.x version
-  - "5.5"
+  - "7.2"
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
@@ -86,4 +86,4 @@ script:
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
   email: false
-  slack: vcuarts:VoiDTV3vk1nXCCM0wPm4bjrs
+  slack: false
