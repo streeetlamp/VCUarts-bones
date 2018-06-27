@@ -1,16 +1,16 @@
 <?php
 /**
- * Author: VCUarts
- * URL: http://arts.vcu.edu
+ * Author: Cody Whitby
+ * URL: https://github.com/streeetlamp/bare-wp
  *
- * @package VCUarts_Bones_WP
+ * @package Bare_WP_Theme
  */
 
 /**
  * Create and return the GA snippet if
  * an ID is set
  */
-function bones_ga_snippet( $ga_id = null ) {
+function bare_ga_snippet( $ga_id = null ) {
 
   $ga_id = get_field( 'ga_code', 'options' ) ? get_field( 'ga_code', 'options' ) : null;
   if ( ! $ga_id || ! we_are_live() || is_user_logged_in() ) { return; }
@@ -29,4 +29,4 @@ function bones_ga_snippet( $ga_id = null ) {
   ";
 }
 
-add_filter( 'wp_head', 'bones_ga_snippet', 20 );
+add_filter( 'wp_head', 'bare_ga_snippet', 20 );

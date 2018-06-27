@@ -1,15 +1,15 @@
 <?php
 /**
- * Author: VCUarts
- * URL: http://arts.vcu.edu
+ * Author: Cody Whitby
+ * URL: https://github.com/streeetlamp/bare-wp
  *
- * @package VCUarts_Bones_WP
+ * @package Bare_WP_Theme
  */
 
 /**
  * WP_HEAD GOODNESS
  */
-function bones_head_cleanup() {
+function bare_head_cleanup() {
 	// category feeds
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
@@ -27,13 +27,13 @@ function bones_head_cleanup() {
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
 	// remove WP version from css
-	add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+	add_filter( 'style_loader_src', 'bare_remove_wp_ver_css_js', 9999 );
 	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'bare_remove_wp_ver_css_js', 9999 );
   // emoji's actually suck
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
   remove_action( 'wp_print_styles', 'print_emoji_styles' );
-} /* end bones head cleanup */
+} /* end head cleanup */
 
 
 /**
@@ -75,14 +75,14 @@ function rw_title( $title, $sep, $seplocation ) {
 /**
  * Remove WP version from RSS
  */
-function bones_rss_version() {
+function bare_rss_version() {
   return '';
 }
 
 /**
  * Remove WP version from scripts
  */
-function bones_remove_wp_ver_css_js( $src ) {
+function bare_remove_wp_ver_css_js( $src ) {
   if ( strpos( $src, 'ver=' ) ) {
     $src = remove_query_arg( 'ver', $src );
   }
@@ -92,7 +92,7 @@ function bones_remove_wp_ver_css_js( $src ) {
 /**
  * Remove injected CSS from gallery
  */
-function bones_gallery_style( $css ) {
+function bare_gallery_style( $css ) {
   return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -100,50 +100,50 @@ function bones_gallery_style( $css ) {
 /**
  * SCRIPTS & ENQUEUEING
  */
-function bones_scripts_and_styles() {
+function bare_scripts_and_styles() {
 
   global $wp_scripts;
 
   if ( ! is_admin() ) {
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
-    wp_register_style( 'bones-stylesheet-min', get_stylesheet_directory_uri() . '/library/css/main.min.css', array(), '', 'all' );
+		wp_register_style( 'bare-stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
+    wp_register_style( 'bare-stylesheet-min', get_stylesheet_directory_uri() . '/library/css/main.min.css', array(), '', 'all' );
 
 		// adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/dist/main.js', array( 'jquery' ), '', true );
-    wp_register_script( 'bones-js-min', get_stylesheet_directory_uri() . '/library/js/dist/main.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bare-js', get_stylesheet_directory_uri() . '/library/js/dist/main.js', array( 'jquery' ), '', true );
+    wp_register_script( 'bare-js-min', get_stylesheet_directory_uri() . '/library/js/dist/main.min.js', array( 'jquery' ), '', true );
 
     // livereload for development
-    wp_register_script( 'bones-livereload', '//localhost:35729/livereload.js', array(), '', true );
+    wp_register_script( 'bare-livereload', '//localhost:35729/livereload.js', array(), '', true );
     // html5 shiv
-    wp_register_script( 'bones-html5-shiv', '//html5shiv.googlecode.com/svn/trunk/html5.js', array(), '' );
+    wp_register_script( 'bare-html5-shiv', '//html5shiv.googlecode.com/svn/trunk/html5.js', array(), '' );
     // font awesome
-    wp_register_style( 'bones-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '' );
+    wp_register_style( 'bare-font-awesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css', array(), '' );
 
     // check environment before outputting appropriate stylesheet
     if ( we_are_live() ) {
-      wp_enqueue_style( 'bones-stylesheet-min' );
-      wp_enqueue_script( 'bones-js-min' );
+      wp_enqueue_style( 'bare-stylesheet-min' );
+      wp_enqueue_script( 'bare-js-min' );
     } else {
-      wp_enqueue_style( 'bones-stylesheet' );
-      wp_enqueue_script( 'bones-js' );
-      wp_enqueue_script( 'bones-livereload' );
+      wp_enqueue_style( 'bare-stylesheet' );
+      wp_enqueue_script( 'bare-js' );
+      wp_enqueue_script( 'bare-livereload' );
     }
 
-    wp_enqueue_style( 'bones-font-awesome' );
+    wp_enqueue_style( 'bare-font-awesome' );
 		wp_enqueue_script( 'jquery' );
 
     // add conditional wrapper around html5 shiv
-    $wp_scripts->add_data( 'bones-html5-shiv', 'conditional', 'lt IE 9' );
-    wp_enqueue_script( 'bones-html5-shiv' );
+    $wp_scripts->add_data( 'bare-html5-shiv', 'conditional', 'lt IE 9' );
+    wp_enqueue_script( 'bare-html5-shiv' );
 	}
 }
 
 /**
  * THEME SUPPORT
  */
-function bones_theme_support() {
+function bare_theme_support() {
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
@@ -160,7 +160,7 @@ function bones_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'bonestheme' ),
+			'main-nav' => __( 'The Main Menu', 'baretheme' ),
 		)
 	);
 } /* end bones theme support */
@@ -169,7 +169,7 @@ function bones_theme_support() {
 /**
  * PAGE NAVI
  */
-function bones_page_navi() {
+function bare_page_navi() {
   global $wp_query;
   $bignum = 999999999;
   if ( $wp_query->max_num_pages <= 1 ) {
@@ -196,15 +196,15 @@ function bones_page_navi() {
  */
 
 /** Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/) */
-function bones_filter_ptags_on_images( $content ) {
+function bare_filter_ptags_on_images( $content ) {
 	return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
 
 /** This removes the annoying […] to a Read More link */
-function bones_excerpt_more( $more ) {
+function bare_excerpt_more( $more ) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="' . get_permalink( $post->ID ) . '" title="' . __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ) . '">' . __( 'Read more &raquo;', 'bonestheme' ) . '</a>';
+	return '...  <a class="excerpt-read-more" href="' . get_permalink( $post->ID ) . '" title="' . __( 'Read ', 'baretheme' ) . esc_attr( get_the_title( $post->ID ) ) . '">' . __( 'Read more &raquo;', 'baretheme' ) . '</a>';
 }
 
 
@@ -215,8 +215,8 @@ if ( we_are_live() ) {
 
 
 /** Customize menu thing is annoying */
-function bones_before_admin_bar_render() {
+function bare_before_admin_bar_render() {
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu( 'customize' );
 }
-add_action( 'wp_before_admin_bar_render', 'bones_before_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'bare_before_admin_bar_render' );

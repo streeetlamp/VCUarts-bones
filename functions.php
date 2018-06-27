@@ -1,13 +1,13 @@
 <?php
 /**
- * Author: VCUarts
- * URL: http://arts.vcu.edu
+ * Author: Cody Whitby
+ * URL: https://github.com/streeetlamp/bare-wp
  *
- * @package VCUarts_Bones_WP
+ * @package Bare_WP_Theme
  */
 
-// LOAD BONES CORE (if you remove this, the theme will break)
-require_once( 'library/bones.php' );
+// LOAD BARE WP CORE (if you remove this, the theme will break)
+require_once( 'library/bare.php' );
 
 // Google Analytics
 require_once( 'library/inc/google-analytics.php' );
@@ -15,41 +15,38 @@ require_once( 'library/inc/google-analytics.php' );
 // Disables trackbacks/pingbacks
 require_once( 'library/inc/disable-trackbacks.php' );
 
-// Minimal Branding Bar Styles
-// define( 'VCUARTS_BAR_MIN_STYLES', true );
-
 
 /**
- * LAUNCH BONES
+ * LAUNCH BARE_WP
  */
-function bones_ahoy() {
+function bare_ahoy() {
 
-  /** Allow editor style.
-  add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' ); */
+  /** Allow editor style. */
+  // add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // launching operation cleanup
-  add_action( 'init', 'bones_head_cleanup' );
+  add_action( 'init', 'bare_head_cleanup' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'bones_rss_version' );
+  add_filter( 'the_generator', 'bare_rss_version' );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'bones_gallery_style' );
+  add_filter( 'gallery_style', 'bare_gallery_style' );
   // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
+  add_action( 'wp_enqueue_scripts', 'bare_scripts_and_styles', 999 );
 
   // launching this stuff after theme setup
-  bones_theme_support();
+  bare_theme_support();
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'bones_filter_ptags_on_images' );
+  add_filter( 'the_content', 'bare_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'bones_excerpt_more' );
+  add_filter( 'excerpt_more', 'bare_excerpt_more' );
 
-} /* end bones ahoy */
+} /* fin */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'bones_ahoy' );
+add_action( 'after_setup_theme', 'bare_ahoy' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -60,40 +57,39 @@ if ( ! isset( $content_width ) ) {
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
-/** Thumbnail sizes
-// add_image_size( 'bones-thumb-600', 600, 150, true );
-// add_image_size( 'bones-thumb-300', 300, 100, true );
+/** Thumbnail sizes */
+// add_image_size( 'bare-thumb-600', 600, 150, true );
+// add_image_size( 'bare-thumb-300', 300, 100, true );
 
-// add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+// add_filter( 'image_size_names_choose', 'bare_custom_image_sizes' );
 
-// function bones_custom_image_sizes( $sizes ) {
+// function bare_custom_image_sizes( $sizes ) {
 //     return array_merge( $sizes, array(
-//         'bones-thumb-600' => __('600px by 150px'),
-//         'bones-thumb-300' => __('300px by 100px'),
+//         'bare-thumb-600' => __('600px by 150px'),
+//         'bare-thumb-300' => __('300px by 100px'),
 //     ) );
 // }
- */
 
 
 /**
  * THEME CUSTOMIZE
  */
-function bones_theme_customizer( $wp_customize ) {
+function bare_theme_customizer( $wp_customize ) {
   $wp_customize->remove_section( 'colors' );
   $wp_customize->remove_section( 'background_image' );
 }
 
-add_action( 'customize_register', 'bones_theme_customizer' );
+add_action( 'customize_register', 'bare_theme_customizer' );
 
 
 /**
  * EXTERNAL FONTS
  */
-function bones_fonts() {
-  wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
-}
+// function bare_fonts() {
+//   wp_enqueue_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+// }
 
-add_action( 'wp_enqueue_scripts', 'bones_fonts' );
+// add_action( 'wp_enqueue_scripts', 'bare_fonts' );
 
 
 /**
@@ -104,7 +100,7 @@ add_action( 'wp_enqueue_scripts', 'bones_fonts' );
 function we_are_live() {
   $host = home_url();
 
-  if ( preg_match( '/\.dev/', $host ) ) {
+  if ( preg_match( '/\.test/', $host ) ) {
     return false;
   }
   return true;
@@ -119,10 +115,10 @@ function we_are_live() {
 
 
   if ( ! function_exists( 'the_field' ) ) {
-    add_action( 'admin_notices', 'bones_acf_notice' );
+    add_action( 'admin_notices', 'bare_acf_notice' );
   }
 
-  function bones_acf_notice() {
+  function bare_acf_notice() {
     ?>
     <div class="update-nag notice" style="display:block; margin:20px 0;">
       <h3><?php echo( 'Install Advanced Custom Fields Pro please or nothing will work probably!' ); ?></h3>

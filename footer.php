@@ -1,9 +1,9 @@
 <?php
 /**
- * Author: VCUarts
- * URL: http://arts.vcu.edu
+ * Author: Cody Whitby
+ * URL: https://github.com/streeetlamp/bare-wp
  *
- * @package VCUarts_Bones_WP
+ * @package Bare_WP_Theme
  */
 
 ?>
