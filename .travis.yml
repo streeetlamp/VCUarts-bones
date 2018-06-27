@@ -12,7 +12,7 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-  # aliased to a recent 5.5.x version
+  # aliased to a recent 7.2.x version
   - "7.2"
 
 # Declare which versions of WordPress to test against.

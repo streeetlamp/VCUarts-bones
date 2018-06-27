@@ -102,7 +102,7 @@ module.exports = function (grunt) {
 			deploy: {
 				options: {
 					dir: 'build',
-					remote: 'git@github.com:streeetlamp/XXXXXXXX.git',
+					remote: 'git@github.com:streeetlamp/bare-wp.git',
 					connectCommits: true,
 					branch: 'build',
 					remoteBranch: 'build',
