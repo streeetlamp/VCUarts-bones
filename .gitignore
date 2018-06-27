@@ -1,0 +1,68 @@
+# folders and files to be ignored by git
+
+############
+## Bower
+############
+
+bower_components/
+
+############
+## Grunt
+############
+
+node_modules/
+
+############
+## IDEs
+############
+
+*.pydevproject
+.project
+.metadata
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+nbproject/
+
+############
+## OSes
+############
+
+[Tt]humbs.db
+[Dd]esktop.ini
+*.DS_store
+.DS_store?
+
+############
+## Misc
+############
+
+bin/
+tmp/
+*.tmp
+*.bak
+*.log
+*.[Cc]ache
+*.cpr
+*.orig
+*.php.in
+.idea/
+temp/
+._*
+.Trashes
+
+.svn
+
+*.codekit
+*.scssc
+library/css/
+build/
+library/js/dist/
+vendor/

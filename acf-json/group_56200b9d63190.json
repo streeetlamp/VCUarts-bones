@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "abc",
             "placeholder": "",
             "prepend": "",
             "append": "",
