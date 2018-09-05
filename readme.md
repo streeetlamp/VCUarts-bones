@@ -9,12 +9,12 @@ git clone git@github.com:streeetlamp/bare-wp.git
 npm install
 ```
 
-## Grunt Tasks
-*Watching + Live Reloading of JS, CSS, PHP*
 ```bash
 grunt build
 ```
 
+## Grunt Tasks
+*Watching + Live Reloading of JS, CSS, PHP*
 ```bash
 grunt dev
 ```
