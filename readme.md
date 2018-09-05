@@ -2,15 +2,19 @@
 
 ## Getting Started
 ```bash
-npm install
+git clone git@github.com:streeetlamp/bare-wp.git
 ```
 
 ```bash
-bower install
+npm install
 ```
 
-## Grunt Tasks  
+## Grunt Tasks
 *Watching + Live Reloading of JS, CSS, PHP*
+```bash
+grunt build
+```
+
 ```bash
 grunt dev
 ```
@@ -20,6 +24,11 @@ grunt dev
 grunt build
 ```
 
+*WP SNIFFIN*
+```bash
+grunt sniff
+```
+
 ![dance](http://i.imgur.com/YuP1ruw.gif)
 
-###### shoudouts to [bones](https://github.com/eddiemachado/bones) for the ~inspiration~ 
+###### shoudouts to [bones](https://github.com/eddiemachado/bones) for the ~inspiration~
